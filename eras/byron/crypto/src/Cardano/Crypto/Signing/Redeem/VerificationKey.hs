@@ -90,6 +90,16 @@ instance ToJSONKey RedeemVerificationKey where
   toJSONKey = ToJSONKeyText render (A.key . render)
     where
       render = A.fromText . sformat redeemVKB64UrlF
+  toJSONKeyList = ToJSONKeyText renderFinal (A.key . renderFinal)
+    where
+      render :: RedeemVerificationKey -> Text
+      render = sformat redeemVKB64UrlF
+      renderTextList :: [RedeemVerificationKey] -> [Text]
+      renderTextList = map render
+      renderText :: [RedeemVerificationKey] -> Text
+      renderText = T.concat . renderTextList
+      renderFinal :: [RedeemVerificationKey] -> A.Key
+      renderFinal = A.fromText . renderText
 
 instance FromJSONKey RedeemVerificationKey where
   fromJSONKey =
