@@ -172,7 +172,7 @@ instance FromCBOR (AProposal ByteSpan) where
 
 instance Decoded (AProposal ByteString) where
   type BaseType (AProposal ByteString) = Proposal
-  recoverBytes = annotation
+  recoverBytes = Cardano.Chain.Update.Proposal.annotation
 
 --------------------------------------------------------------------------------
 -- Proposal Formatting
