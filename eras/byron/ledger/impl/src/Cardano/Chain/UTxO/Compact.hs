@@ -37,6 +37,7 @@ import Cardano.Chain.Common.Lovelace (Lovelace)
 import Cardano.Chain.UTxO.Tx (TxId, TxIn (..), TxOut (..))
 import Cardano.Crypto.Hashing (hashToBytes, unsafeHashFromBytes)
 import Cardano.Prelude
+import Cardano.HeapWords (HeapWords(..), heapWordsUnpacked)
 import Data.Binary.Get (Get, getWord64le, runGet)
 import Data.Binary.Put (Put, putWord64le, runPut)
 import qualified Data.ByteString.Lazy as BSL (fromStrict, toStrict)

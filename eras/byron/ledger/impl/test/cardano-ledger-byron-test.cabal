@@ -221,6 +221,7 @@ library
                      , formatting
                      , generic-monoid
                      , hedgehog >= 1.0.4
+                     , heapwords
                      , microlens
                      , resourcet
                      , small-steps

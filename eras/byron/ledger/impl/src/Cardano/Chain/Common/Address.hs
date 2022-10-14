@@ -79,6 +79,7 @@ import Cardano.Crypto.Signing
     VerificationKey,
   )
 import Cardano.Prelude
+import Cardano.HeapWords (HeapWords(..), heapWords3)
 import qualified Data.Aeson as Aeson
 import Data.ByteString.Base58
   ( Alphabet (..),

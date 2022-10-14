@@ -262,6 +262,7 @@ library
                      , directory
                      , filepath
                      , formatting
+                     , heapwords
                      , mtl
                      , nothunks
                      , quiet
@@ -371,6 +372,7 @@ test-suite cardano-ledger-byron-test
                      , formatting
                      , generic-monoid
                      , hedgehog >= 1.0.4
+                     , heapwords
                      , microlens
                      , resourcet
                      , small-steps

@@ -15,6 +15,7 @@ import Cardano.Chain.UTxO
     toCompactTxOut,
   )
 import Cardano.Prelude
+import Cardano.HeapWords (HeapWords (..))
 import Hedgehog (MonadTest, assert, forAll, property, tripping)
 import Test.Cardano.Chain.UTxO.Gen (genTxId, genTxIn, genTxOut)
 import Test.Cardano.Prelude

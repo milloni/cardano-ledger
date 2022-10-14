@@ -9,6 +9,7 @@ where
 
 import Cardano.Chain.Common (fromCompactAddress, toCompactAddress)
 import Cardano.Prelude
+import Cardano.HeapWords (HeapWords (..))
 import Hedgehog (MonadTest, assert, forAll, property, tripping)
 import Test.Cardano.Chain.Common.Gen (genAddress)
 import Test.Cardano.Prelude (discoverPropArg, discoverRoundTripArg)

@@ -25,6 +25,7 @@ import Cardano.Crypto.ProtocolMagic
     getProtocolMagic,
   )
 import Cardano.Prelude hiding ((%))
+import Cardano.HeapWords (HeapWords(..))
 import Data.Aeson (ToJSON)
 import Formatting (bprint, build, (%))
 import qualified Formatting.Buildable as B
