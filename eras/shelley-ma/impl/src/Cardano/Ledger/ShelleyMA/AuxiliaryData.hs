@@ -56,6 +56,7 @@ import Data.Coders
 import Data.Map.Strict (Map)
 import Data.Sequence.Strict (StrictSeq)
 import qualified Data.Sequence.Strict as StrictSeq
+import Data.Typeable
 import Data.Word (Word64)
 import GHC.Generics (Generic)
 import NoThunks.Class (NoThunks)
@@ -150,7 +151,7 @@ encAuxiliaryDataRaw (AuxiliaryDataRaw blob sp) =
     !> E encodeFoldable sp
 
 instance
-  (Era era, FromCBOR (Annotator (Script era))) =>
+  (Typeable (Script era), Era era, FromCBOR (Annotator (Script era))) =>
   FromCBOR (Annotator (AuxiliaryDataRaw era))
   where
   fromCBOR =
@@ -179,5 +180,5 @@ instance
 deriving via
   (Mem AuxiliaryDataRaw era)
   instance
-    (Era era, FromCBOR (Annotator (Script era))) =>
+    (Typeable (Script era), Era era, FromCBOR (Annotator (Script era))) =>
     FromCBOR (Annotator (AllegraTxAuxData era))
