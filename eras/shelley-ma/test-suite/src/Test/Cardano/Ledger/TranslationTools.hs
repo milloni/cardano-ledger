@@ -26,6 +26,7 @@ import Cardano.Binary
 import Cardano.Ledger.Era (PreviousEra, TranslateEra (..), TranslationContext)
 import Control.Monad.Except (runExcept)
 import qualified Data.ByteString.Base16.Lazy as B16
+import Data.Typeable
 import Test.Tasty.HUnit (Assertion, assertFailure)
 
 translate ::
@@ -81,7 +82,7 @@ decodeTest _ x = case decodeFull (serialize x) :: Either DecoderError b of
 -- Tests that the type a can be decoded as b
 decodeTestAnn ::
   forall a b proxy.
-  (ToCBOR a, FromCBOR (Annotator b)) =>
+  (Typeable b, ToCBOR a, FromCBOR (Annotator b)) =>
   proxy b ->
   a ->
   Assertion
